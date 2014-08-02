@@ -20,8 +20,8 @@ Usage
 I've tried to create a naming convention consistent with Nvidia's CUDA APIs for single / double precision and
 real / complex functions.
 
-	MatlabFile file* = new MatlabFile();
-	file->open("file.mat");
+    MatlabFile file* = new MatlabFile();
+    file->open("file.mat");
 
     file->readR(...) / writeR(...);  // single precision real
     file->readC(...) / writeC(...);  // single precision complex
@@ -31,13 +31,16 @@ real / complex functions.
     file->close;
     delete file;
 
-Clearly, HDF5 is required but the types are tied to CUDA's vector_types.h so CUDA is also necessary, however
+Clearly, HDF5 is required but the types are tied to CUDA's 'vector_types.h' so CUDA is also necessary, however
 you may simply redefine the types by adjusting the top of 'MatlabFile.hpp'.
 
 Example
 -------
 
-See the example folder for matlab / example C++ application.
+See the example folder for matlab / example C++ application.  You will need to build the example application
+which requires cmake.  Then see the MatlabFileTest.m which will guide you through generating data, writing it
+to file, reading it into the C++ application, mutating the data, writing it back out, then finally reading it
+back into Matlab. 
 
 License
 -------

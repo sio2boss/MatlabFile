@@ -9,9 +9,8 @@
 #define MATLABFILE_HPP_
 
 #include <string>
-
-#include "matvec.h"
-#include "hdf5.h"
+#include <hdf5.h>
+#include <vector_types.h>
 
 enum MatlabFileMode {READ, WRITE};
 

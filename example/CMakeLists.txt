@@ -1,0 +1,23 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+
+PROJECT(MatlabFileTestApp)
+
+SET (MatlabFileTestApp_VERSION_MAJOR 1)
+SET (MatlabFileTestApp_VERSION_MINOR 0)
+
+FIND_PACKAGE(HDF5 REQUIRED)
+
+INCLUDE_DIRECTORIES(
+	${HDF5_INCLUDE_DIRS}
+	".."
+)
+
+ADD_EXECUTABLE(MatlabFileTestApp
+	matlab_file_test.cpp
+	../MatlabFile.cpp
+)
+
+TARGET_LINK_LIBRARIES(MatlabFileTestApp
+	${HDF5_CXX_LIBRARIES}
+	
+)
