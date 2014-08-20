@@ -27,6 +27,8 @@ real / complex functions.
     file->readC(...) / writeC(...);  // single precision complex
     file->readD(...) / writeD(...);  // double precision real
     file->readZ(...) / writeZ(...);  // double precision complex
+    file->readI(...) / writeI(...);  // int
+    file->readL(...) / writeL(...);  // long
 
     file->close;
     delete file;
@@ -40,7 +42,7 @@ Example
 See the example folder for matlab / example C++ application.  You will need to build the example application
 which requires cmake.  Then see the MatlabFileTest.m which will guide you through generating data, writing it
 to file, reading it into the C++ application, mutating the data, writing it back out, then finally reading it
-back into Matlab. 
+back into Matlab and verifying. 
 
 License
 -------

@@ -9,15 +9,15 @@ FIND_PACKAGE(HDF5 REQUIRED)
 
 INCLUDE_DIRECTORIES(
 	${HDF5_INCLUDE_DIRS}
-	".."
+	"example"
+    "libMatlabFile"
 )
 
 ADD_EXECUTABLE(MatlabFileTestApp
-	matlab_file_test.cpp
-	../MatlabFile.cpp
+	example/matlab_file_test.cpp
 )
 
 TARGET_LINK_LIBRARIES(MatlabFileTestApp
 	${HDF5_CXX_LIBRARIES}
-	
+	${HDF5_LIBRARIES}
 )
