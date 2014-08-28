@@ -1,4 +1,4 @@
-#include "MatlabFile.hpp"
+#include "MatlabFile.h"
 
 #include <iostream>
 #include <string>

@@ -13,11 +13,17 @@ INCLUDE_DIRECTORIES(
     "libMatlabFile"
 )
 
+ADD_LIBRARY(libMatlabFile
+	libMatlabFile/MatlabFile.cpp
+)
+TARGET_LINK_LIBRARIES(libMatlabFile
+	${HDF5_CXX_LIBRARIES}
+	${HDF5_LIBRARIES}
+)
+
 ADD_EXECUTABLE(MatlabFileTestApp
 	example/matlab_file_test.cpp
 )
-
 TARGET_LINK_LIBRARIES(MatlabFileTestApp
-	${HDF5_CXX_LIBRARIES}
-	${HDF5_LIBRARIES}
+	libMatlabFile
 )
